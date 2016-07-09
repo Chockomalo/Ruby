@@ -7,7 +7,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
-  	@article.update_visits_count 
+  	@article.update_visits_count
+    @comment = Comment.new 
   end
 
   def new

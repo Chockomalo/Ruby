@@ -11,8 +11,10 @@
 <div>
 	<%= @article.body %>
 </div>
-
-
+<div>
+	<h3>Comentarios</h3>
+	<%= render "comments/form"%>
+</div>
 <div class="top-space">
 	<%= link_to "Editar", edit_article_path(@article) %>
 </div>
