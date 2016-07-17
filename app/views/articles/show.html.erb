@@ -1,5 +1,8 @@
 
 <h1><%= @article.title %></h1>
+<div class="field">
+	<%= image_tag @article.cover.url(:thumb) %>
+</div>
 <% unless @article.user.nil? %>
 	<p>
 		Escrito por: <%= @article.user.email%>

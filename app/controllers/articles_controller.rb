@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
 
   def show
   	@article.update_visits_count
-    @comment = Comment.new 
+    @comment = Comment.new
   end
 
   def new
@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
   	@article = current_user.articles.new(article_params)
 
     if  @article.save
-	   redirect_to @article 
+	   redirect_to @article
     else
       render :new
     end
@@ -27,11 +27,11 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    
+
   end
 
   def update
-    
+
     if @article.update(article_params)
       redirect_to @article
     else
@@ -40,10 +40,10 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    
+
     @article.destroy
     redirect_to articles_path
-    
+
   end
 
   private
@@ -53,7 +53,7 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title,:body)
+    params.require(:article).permit(:title,:body,:cover)
   end
 
 
