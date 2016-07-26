@@ -14,10 +14,13 @@ ul{
 	text-transform: uppercase;
 	cursor: pointer;
 	font-size: 1.2em;
-	
+
 }
 .red{
 	color: red !important;
+}
+.blue{
+	color: blue !important;
 }
 .be-red{
 	background: #000;

@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'aasm'
 gem 'paperclip'
 gem 'jquery-turbolinks'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

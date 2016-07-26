@@ -2,11 +2,11 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
   before_action :set_article, except: [:index, :new, :create]
   before_action :authenticate_editor!, only:[:new,:create,:update]
-  before_action :authenticate_admin!, only: [:destroy]
+  before_action :authenticate_admin!, only: [:destroy, :publish]
 
 
   def index
-  	@articles = Article.all
+  	@articles = Article.publicados.ultimos
   end
 
   def show
@@ -30,8 +30,9 @@ class ArticlesController < ApplicationController
 
   end
 
-  def edit
-
+  def publish
+    @article.publish!
+    redirect_to @article
   end
 
   def update
